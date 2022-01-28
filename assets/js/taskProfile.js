@@ -1,4 +1,5 @@
 let taskCards = document.querySelectorAll('.buttonLink');
+// Getting all Category Cards
 console.log('Hello');
 for(let itr of taskCards){
     console.log(itr);
