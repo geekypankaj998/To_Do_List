@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Hustle</title>
+  <script src="https://kit.fontawesome.com/2de811935a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+  <!-- This is the main Container -->
+  <div id="container">       
+   
+    <h1>TODO App</h1>
+
+    <div id='main'>
+
+      <form action="/createTask" method='POST'>
+        <!-- 1st Row -->
+        <div class='rowDiv'>
+          <label for="descrip">DESCRIPTION</label>
+          <input type='string' id='desscrip' required placeholder='Enter Description' name='descrip'>    
+        </div>
+        <!-- 2nd Row -->
+        <div class='secRow'>
+          <div> 
+            <label for="type">CATEGORY</label>
+            <select name="category" id="type" required>
+              <option value="Personal" id='type'>Choose a category</option>
+              <option value="Personal" id='type'>Personal</option>
+              <option value="Work" id='type'>Work</option>
+              <option value="Social" id='type'>Social</option>
+            </select>    
+          </div>
+          <div >
+            <label for="dueDate">DUE DATE</label>
+            <input type='date' id='descrip' name='dateV' required >    
+          </div>
+        </div>
+        <!-- 3rd Row -->
+        <div class='secRow' id='buttonSec'>
+            <div class='buttonStyle' id='plusB'> 
+              <button><i class='fas fa-plus'></i>ADD TASK</button>
+            </div>
+        </div>
+      </form>
+    </div>
+<!-- List Tasks After the Form  -->
+    <ul class='tasks'>
+
+      <%for(let task of taskList){ %>
+      <%console.log(task)%>
+        <li class='horiStyle'>
+          <div class='delButton'><a href='/deleteTask/?taskD=<%=task._id%>'><i class='fas fa-trash'></i></a></div>
+          <div class='descrip'>
+            <div class='descripText'><%=task.descrip %></div>
+            <div class='dateDescrip'>
+              <i class='fas fa-calendar'></i><div><%=task.dateV%></div>
+            </div>
+          </div>
+          <div class='buttonLink'><%=task.category%></div>
+        </li>
+      <% }%>
+    </ul>
+
+  </div>
+  <!-- This file contains the code for changing the color of various categories TASK once loaded -->
+  <script src="/js/taskProfile.js"></script> 
+  </body>
+</html>

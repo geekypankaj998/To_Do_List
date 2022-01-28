@@ -1,0 +1,159 @@
+/* Some initial Styling Like making all labels,inputs ,a and etc as Block and giving some width */
+
+label,input,a,select,option{
+  display:block;
+  width:100%;
+  box-sizing:border-box;
+  margin:0;
+  height:30px;
+}
+/* Removing predefined styling and adding some personal touch */
+ul{
+  display:block;
+  width:100%;
+  box-sizing:border-box;
+  margin:0;
+  list-style: none;
+  padding:0;
+}
+/* The container that holds all the info (Outer box for the TOD App) */
+#container{
+  display:flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-items:center;
+  background-color:azure;
+  min-height: 500px;
+  width:600px;
+  margin:auto;
+}
+i{
+  display:inline-block;
+}
+li{
+  display:block;
+  height:70px;
+  box-sizing:border-box;
+  width:95%;
+  border-top:2px solid grey;
+}
+/* Contains Form and Task List */
+#main{
+  height: 100%;
+  width:100%;
+  display:flex;
+  justify-content:center ;
+}
+form{
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  border:1px solid grey;
+}
+/* Setting prop for 3 direct Children of Form basically 3 rows */
+form > div{
+  width:100%;
+  border:1px solid grey;
+  box-sizing:border-box;
+  height:70px;
+  padding:5px;
+}
+.secRow{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+.secRow div{
+  width:50%;
+}
+.secRow .buttonStyle{
+  height:50px;
+  width:30%;
+}
+.buttonStyle{
+  color:white;
+  cursor:pointer;
+  font-size: 20px;
+  display:flex;
+  align-items:center;
+  text-align: center;
+}
+#plusB{
+  background-color:darkslategrey ;
+}
+/* Made some labels so generic styles for that */
+label{
+  height:20px;
+  font-weight: 700;
+  font-family: monospace;
+  color: grey;
+}
+                              
+.buttonStyle a{
+  padding-top: 4px;
+  text-decoration:none;
+  color:white;
+}
+
+.buttonStyle button{
+  background:inherit;
+  width:100%;
+  height:100%;
+  color:white;
+  cursor:pointer;
+  display:block;
+  font-size:1.2rem;
+}
+
+/* Styling for Tasks */
+.tasks{
+  display:flex;
+  align-items: center;
+  flex-direction:column;
+}
+/* Generic Style Used to align elements horizontally */
+.horiStyle{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  color:darkslategray;
+}
+/* This is Basically the Card for Category of Tasks that are listed */
+.buttonLink{
+  width:20%;
+  text-align: center;
+  background-color:violet;
+  height:40%;
+  padding-top:5px;
+  font-size: 1.2rem;
+  color:white;
+}
+/*  */
+.descrip{
+  min-width:50%;
+  height:80%;
+}
+.descripText{
+  height:50%;
+  font-size: 1.2rem;
+  font-weight:600;
+}
+.dateDescrip{
+  display:flex;
+  font-weight:500;
+}
+.dateDescrip i{
+  display:block;
+  padding-right:5px;
+}
+.delButton i {
+  color:darkslategray;
+  font-size:1.2rem;
+}
+
+.aquaCol{
+  background-color:rgb(72, 109, 189);
+}
+.yellBCol{
+  background-color:rgb(154, 177, 26);
+}
