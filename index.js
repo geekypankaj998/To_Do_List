@@ -31,16 +31,30 @@ app.get('/',function(req,resp){
 });
 
 //After triggered by Anchor Tags handling Get Request to Delete
-app.get('/deleteTask/',function(req,resp){
-   let targetTask = req.query;
-   console.log(targetTask);
-   Task.findByIdAndDelete(targetTask.taskD,function(err){
+app.post('/deleteTasks',function(req,resp){
+   let targetTask = req.body;
+   console.log('Hello there',targetTask);
+
+   let obj = [];
+   for(itr in targetTask){
+        const { ObjectId } = require('mongodb');
+        const _id = ObjectId(itr);
+        obj.push(_id);
+   }
+   console.log(obj);
+ 
+   for(itr of obj){
+      Task.findByIdAndDelete(itr,function(err){
         if(err){
-           console.log('Error occured ',err.message);
-           return;
-        }
+          console.log('Error occured ',err.message);
+          return;
+       }
+      });
+   }
+  
         return resp.redirect('back');      
-   }); 
+    
+  
 });
 
 // Creating new Task
@@ -60,6 +74,7 @@ app.post('/createTask',function(req,resp){
           return;
         }
         console.log('****',task);
+        console.log('Task Info : Descrip ',task.descrip);
         return resp.redirect('back');
     });
 });

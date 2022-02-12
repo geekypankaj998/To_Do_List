@@ -1,3 +1,12 @@
+/* Body background */
+body{
+  background-image: url('../images/backgroundNew2.jpg');
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-color:rgb(57, 11, 95); */
+
+}
 /* Some initial Styling Like making all labels,inputs ,a and etc as Block and giving some width */
 
 label,input,a,select,option{
@@ -22,7 +31,7 @@ ul{
   flex-direction:column;
   justify-content: flex-start;
   align-items:center;
-  background-color:azure;
+  background-color:rgb(191, 152, 228);
   min-height: 500px;
   width:600px;
   margin:auto;
@@ -68,19 +77,21 @@ form > div{
 }
 .secRow .buttonStyle{
   height:50px;
-  width:30%;
+  width:100%;
+}
+.buttonStyle button{
+  display: block;
+  width:35%;
 }
 .buttonStyle{
   color:white;
   cursor:pointer;
   font-size: 20px;
   display:flex;
-  align-items:center;
-  text-align: center;
+  justify-content:space-around;
 }
-#plusB{
-  background-color:darkslategrey ;
-}
+
+
 /* Made some labels so generic styles for that */
 label{
   height:20px;
@@ -96,8 +107,7 @@ label{
 }
 
 .buttonStyle button{
-  background:inherit;
-  width:100%;
+  /* width:100%; */
   height:100%;
   color:white;
   cursor:pointer;
@@ -137,6 +147,7 @@ label{
   height:50%;
   font-size: 1.2rem;
   font-weight:600;
+  color:white;
 }
 .dateDescrip{
   display:flex;
@@ -146,9 +157,14 @@ label{
   display:block;
   padding-right:5px;
 }
-.delButton i {
+
+.delButton{ 
   color:darkslategray;
   font-size:1.2rem;
+  /* color:white; */
+  display:block;
+  width:30px;
+  height:30px;
 }
 
 .aquaCol{
@@ -156,4 +172,13 @@ label{
 }
 .yellBCol{
   background-color:rgb(154, 177, 26);
+}
+#addItem{
+  background-color:rgb(161, 228, 161);
+}
+
+#delB{
+  background-color:orangered;
+  color:white;
+  width:200px;
 }
