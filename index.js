@@ -1,7 +1,12 @@
 const { Console } = require('console');
 const express = require('express');
 const { Http2ServerRequest } = require('http2');
-const port = 8000;
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+
 const db = require('./config/mongoose');
 const Task = require('./models/task');
 const app = express();    //Initializing express and ecosystem
