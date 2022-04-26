@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/task_db');
+// connect Mongoose to your DB
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/task_db');
 
 const db = mongoose.connection;
 
