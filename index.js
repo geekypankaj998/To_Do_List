@@ -1,3 +1,4 @@
+require('dotenv').config()
 const { Console } = require('console');
 const express = require('express');
 const { Http2ServerRequest } = require('http2');
